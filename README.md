@@ -1,3 +1,5 @@
+>![Alt text](media/AIReplace.png)
+
 # Unleash the Power of Artificial Intelligence with PowerShell
 Welcome to the PowerShell Artificial Intelligence repository! Here, you will find a collection of powerful PowerShell scripts that will enable you to easily integrate AI into your projects and take them to the next level. Imagine being able to interact directly with OpenAI's GPT AI with just a few simple commands. With this module, it's now possible.
 
