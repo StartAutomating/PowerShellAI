@@ -7,7 +7,16 @@ Welcome to the PowerShell Artificial Intelligence repository! Here, you will fin
 By using this module, you'll have the ability to add cutting-edge AI functionality to your projects without needing to have a deep understanding of the underlying technology. This means you can stay focused on what you do best while still being able to work with the latest and greatest.
 
 ## Start Your AI Journey Today
-### Examples
+
+### Installation
+
+In the PowerShell console:
+
+```powershell
+Install-Module -Name PowerShellAI
+```
+
+## Examples
 Check out these PowerShell scripts to see how easy it is to get started with AI in PowerShell:
 
 |PS Script | Description | Location
