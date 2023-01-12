@@ -16,6 +16,8 @@ In the PowerShell console:
 Install-Module -Name PowerShellAI
 ```
 
+Get/Create your OpenAI API key from [https://beta.openai.com/account/api-keys](https://beta.openai.com/account/api-keys) and then set `$env:OpenAIKey`.
+
 ## Examples
 Check out these PowerShell scripts to see how easy it is to get started with AI in PowerShell:
 
