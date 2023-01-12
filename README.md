@@ -1,4 +1,4 @@
->![Alt text](media/AIReplace.png)
+>![](./media/AIReplace.png)
 
 # Unleash the Power of Artificial Intelligence with PowerShell
 Welcome to the PowerShell Artificial Intelligence repository! Here, you will find a collection of powerful PowerShell scripts that will enable you to easily integrate AI into your projects and take them to the next level. Imagine being able to interact directly with OpenAI's GPT AI with just a few simple commands. With this module, it's now possible.
@@ -12,3 +12,12 @@ Check out these PowerShell scripts to see how easy it is to get started with AI 
 
 |PS Script | Description | Location
 |--|--|--|
+| Disable-AIShortCutKey | Disable the <kbd>ctrl+g</kbd> shortcut key go getting completions | [Disable-AIShortCutKey.ps1](./Public/Disable-AIShortCutKey.ps1) |
+| Enable-AIShortCutKey | Enable the <kbd>ctrl+g</kbd> | [Enable-AIShortCutKey.ps1](./Public/Enable-AIShortCutKey.ps1) |
+| Get-GPT3Completion | Get a completion from the OpenAI GPT-3 API | [Get-GPT3Completion.ps1](./Public/Get-GPT3Completion.ps1)
+
+## In Action
+
+Here is `Get-GPT3Completion` posting your request to the OpenAI GPT-3 API and returning the completion:
+
+![](./media/GPT3Completion.gif)
