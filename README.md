@@ -32,3 +32,64 @@ Check out these PowerShell scripts to see how easy it is to get started with AI 
 Here is `Get-GPT3Completion` posting your request to the OpenAI GPT-3 API and returning the completion:
 
 ![](./media/GPT3Completion.gif)
+
+
+## How to use it
+
+```powershell
+Get-GPT3Completion "list of planets only names as json"
+
+[
+    "Mercury",
+    "Venus",
+    "Earth",
+    "Mars",
+    "Jupiter",
+    "Saturn",
+    "Uranus",
+    "Neptune"
+]
+```
+
+### As XML
+
+```powershell
+Get-GPT3Completion "list of planets only names as xml"
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<planets>
+  <planet>Mercury</planet>
+  <planet>Venus</planet>
+  <planet>Earth</planet>
+  <planet>Mars</planet>
+  <planet>Jupiter</planet>
+  <planet>Saturn</planet>
+  <planet>Uranus</planet>
+  <planet>Neptune</planet>
+</planets>
+```
+
+### As Markdown
+
+```powershell
+
+ Get-GPT3Completion "first 5 US presidents and terms as markdown table"
+
+
+| President | Term |
+|----------|------|
+| George Washington | 1789-1797 |
+| John Adams | 1797-1801 |
+| Thomas Jefferson | 1801-1809 |
+| James Madison | 1809-1817 |
+| James Monroe | 1817-1825 |
+```
+
+| President | Term |
+|----------|------|
+| George Washington | 1789-1797 |
+| John Adams | 1797-1801 |
+| Thomas Jefferson | 1801-1809 |
+| James Madison | 1809-1817 |
+| James Monroe | 1817-1825 |
