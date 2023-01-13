@@ -27,14 +27,16 @@ Check out these PowerShell scripts to see how easy it is to get started with AI 
 | Enable-AIShortCutKey | Enable the <kbd>ctrl+g</kbd> | [Enable-AIShortCutKey.ps1](./Public/Enable-AIShortCutKey.ps1) |
 | Get-GPT3Completion | Get a completion from the OpenAI GPT-3 API | [Get-GPT3Completion.ps1](./Public/Get-GPT3Completion.ps1)
 
-## In Action
+## Demos of Get-GPT3Completion
 
-Here is `Get-GPT3Completion` posting your request to the OpenAI GPT-3 API and returning the completion:
+Here are demos of `Get-GPT3Completion` posting your request to the OpenAI GPT-3 API and returning the completion:
 
-![](./media/GPT3Completion.gif)
+| Description | YouTube Video |
+|--|--|
+| Quick Demo of PowerShellAI | <a href="https://youtu.be/fpq9TDpaCuU"><img src="https://img.youtube.com/vi/fpq9TDpaCuU/0.jpg" width="200"> |
+| Using PowerShell with OpenAI GPT in the console with a shortcut key | <a href="https://youtu.be/Y2fJki6r4mI"><img src="https://img.youtube.com/vi/Y2fJki6r4mI/0.jpg" width="200"> |
 
-
-## How to use it
+## What it looks like
 
 ```powershell
 Get-GPT3Completion "list of planets only names as json"
@@ -85,6 +87,8 @@ Get-GPT3Completion "list of planets only names as xml"
 | James Madison | 1809-1817 |
 | James Monroe | 1817-1825 |
 ```
+
+Copy and pasted into this README.md:
 
 | President | Term |
 |----------|------|
