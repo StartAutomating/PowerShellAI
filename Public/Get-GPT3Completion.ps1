@@ -34,6 +34,7 @@ function Get-GPT3Completion {
         .EXAMPLE
         Get-GPT3Completion -prompt "What is 2%2? - please explain"
     #>
+    [alias("gpt")]
     param(
         [Parameter(Mandatory)]
         $prompt,
@@ -85,6 +86,8 @@ function Get-GPT3Completion {
         Format-List |
         Out-Host
     }
+
+    Write-Progress -Activity 'PowerShellAI' -Status 'Processing GPT repsonse. Please wait...'
 
     $result = Invoke-RestMethod @params
 
