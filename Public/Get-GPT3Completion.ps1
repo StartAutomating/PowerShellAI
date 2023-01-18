@@ -87,7 +87,7 @@ function Get-GPT3Completion {
         Out-Host
     }
 
-    Write-Progress -Activity 'PowerShellAI' -Status 'Processing GPT repsonse. Please wait...'
+    # Write-Progress -Activity 'PowerShellAI' -Status 'Processing GPT repsonse. Please wait...'
 
     $result = Invoke-RestMethod @params
 
