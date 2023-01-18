@@ -1,6 +1,6 @@
 @{
     RootModule        = 'PowerShellAI.psm1'
-    ModuleVersion     = '0.1.0'
+    ModuleVersion     = '0.2.0'
     GUID              = '081ce7b4-6e63-41ca-92a7-2bf72dbad018'
     Author            = 'Douglas Finke'
     CompanyName       = 'Doug Finke'
@@ -14,6 +14,10 @@ PowerShell GPT AI module allows to integrate with OpenAI API and access GPT-3 mo
         'Disable-AIShortCutKey'
         'Enable-AIShortCutKey'
         'Get-GPT3Completion'
+    )
+
+    AliasesToExport   = @(
+        'gpt'
     )
 
     PrivateData       = @{
