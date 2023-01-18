@@ -38,6 +38,8 @@ Here are demos of `Get-GPT3Completion` posting your request to the OpenAI GPT-3 
 
 ## What it looks like
 
+> ***Note:*** You can use the `gpt` alias for `Get-GPT3Completion`
+
 ```powershell
 Get-GPT3Completion "list of planets only names as json"
 
