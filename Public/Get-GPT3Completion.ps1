@@ -68,22 +68,18 @@ function Get-GPT3Completion {
         stop              = $stop
     }
 
-    $body = $body | ConvertTo-Json -Depth 5
-    $body = [System.Text.Encoding]::UTF8.GetBytes($body)
     $params = @{
         Uri         = "https://api.openai.com/v1/completions" 
         Method      = 'Post' 
         Headers     = @{Authorization = "Bearer $($env:OpenAIKey)" } 
-        ContentType = 'application/json'
-        #body        = $body | ConvertTo-Json -Depth 5
-        body        = $body
-    }    
-    
-    #$params["body"] = [System.Text.Encoding]::UTF8.GetBytes($json)
+        ContentType = 'application/json'        
+        body        = [Text.Encoding]::UTF8.GetBytes(
+                        ($body | ConvertTo-Json -Depth 5)
+                      )
+    }
     
     if ($PSCmdlet.MyInvocation.BoundParameters["Verbose"].IsPresent) {
         if ($env:USERNAME -eq 'finke') { $exclude = 'Headers' }
-
         $params | 
         ConvertTo-Json -Depth 10 | 
         ConvertFrom-Json | 
@@ -94,12 +90,30 @@ function Get-GPT3Completion {
 
     # Write-Progress -Activity 'PowerShellAI' -Status 'Processing GPT repsonse. Please wait...'
 
-    $result = Invoke-RestMethod @params
+    # Note the time right before we ask for the result.
+    $QuestionTime = [DateTime]::Now    
+    $result = Invoke-RestMethod @params    
+    $result.pstypenames.clear()
+    # Decorate the result as a GPT-3.Result (for default formatting)
+    $result.pstypenames.add("GPT-3.Result")
+    # and as a GPT-3.Result of that model (in case someone wanted to format results from a model )
+    $result.pstypenames.add("GPT-3.Result.$model")
 
-    if ($Raw) {
-        $result
-    } 
-    else {
-        $result.choices[0].text
-    }
+    # Add three properties to each returned object:
+
+    # * Our request body
+    $result.psobject.properties.add([psnoteproperty]::new(
+        "RequestBody", $body
+    ))
+    # * The Question we asked
+    $result.psobject.properties.add([psnoteproperty]::new(
+        "Question", $body.prompt
+    ))
+    # * The Question's Timestamp
+    $result.psobject.properties.add([psnoteproperty]::new(
+        "QuestionTime", $QuestionTime
+    ))
+
+    # Now, output the result.
+    $result
 }
