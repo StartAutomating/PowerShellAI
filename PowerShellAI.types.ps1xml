@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<!-- Generated with EZOut 1.9.9: Install-Module EZOut or https://github.com/StartAutomating/EZOut -->
+<Types>
+  <Type>
+    <Name>GPT-3.Result</Name>
+    <Members>
+      <ScriptMethod>
+        <Name>ToString</Name>
+        <Script>
+                        $this.Answer
+                    </Script>
+      </ScriptMethod>
+      <ScriptProperty>
+        <Name>Answer</Name>
+        <GetScriptBlock>
+                        $this.choices[0].text.trim()
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AnswerTime</Name>
+        <GetScriptBlock>
+                        [DateTime]::UnixEpoch.AddSeconds($this.created).ToLocalTime()
+                    </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+</Types>
