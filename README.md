@@ -99,3 +99,87 @@ Copy and pasted into this README.md:
 | Thomas Jefferson | 1801-1809 |
 | James Madison | 1809-1817 |
 | James Monroe | 1817-1825 |
+
+
+## `ai` function
+
+The `ai` function calls that allows `piping` and `prompting` text. This is useful for chaining commands together.
+
+```powershell
+ai "list of planets only names as json"
+```
+
+```json
+[
+    "Mercury",
+    "Venus",
+    "Earth",
+    "Mars",
+    "Jupiter",
+    "Saturn",
+    "Uranus",
+    "Neptune"
+]
+```
+ 
+
+```powershell
+ai "list of planets only names as json" | ai 'convert to  xml'
+```
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Planets>
+    <Planet>Mercury</Planet>
+    <Planet>Venus</Planet>
+    <Planet>Earth</Planet>
+    <Planet>Mars</Planet>
+    <Planet>Jupiter</Planet>
+    <Planet>Saturn</Planet>
+    <Planet>Uranus</Planet>
+    <Planet>Neptune</Planet>
+</Planets>
+```        
+
+```powershell
+ai "list of planets only names as json" | ai 'convert to  xml' | ai 'convert to  powershell'
+```
+
+```powershell
+[xml]$xml = @"
+<?xml version="1.0" encoding="UTF-8"?>
+<Planets>
+    <Planet>Mercury</Planet>
+    <Planet>Venus</Planet>
+    <Planet>Earth</Planet>
+    <Planet>Mars</Planet>
+    <Planet>Jupiter</Planet>
+    <Planet>Saturn</Planet>
+    <Planet>Uranus</Planet>
+    <Planet>Neptune</Planet>
+</Planets>
+"@
+
+$xml.Planets.Planet
+```
+
+## Use `ai` with `git`
+
+Pipe the output of `git status` to `ai` to create a commit message.
+
+```powershell
+git status | ai "create a detailed git message"
+```
+
+```
+Commit message:
+Added PowerShellAI.psd1, README.md, changelog.md, and Public/ai.ps1 to dcf-spike-piping-to-ai-function branch. Updated PowerShellAI.psd1 and README.md with new changes. Added changelog.md to track changes. Added Public/ai.ps1 to enable piping to AI function.
+```
+
+# Copilot at the PowerShell Console
+
+Thank you to [Clem Messerli](https://twitter.com/ClemMesserli/status/1616312238209376260?s=20&t=KknO2iPk3yrQ7x42ZayS7g) for posting a great prompt to show `copilot` in action.
+
+![Alt text](media/Copilot-GPT-At-The-CLI.png)
+
+Check out the [video of `copilot` in action]()
