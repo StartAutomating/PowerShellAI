@@ -27,9 +27,9 @@ Check out these PowerShell scripts to see how easy it is to get started with AI 
 | Enable-AIShortCutKey | Enable the <kbd>ctrl+g</kbd> | [Enable-AIShortCutKey.ps1](./Public/Enable-AIShortCutKey.ps1) |
 | Get-GPT3Completion | Get a completion from the OpenAI GPT-3 API | [Get-GPT3Completion.ps1](./Public/Get-GPT3Completion.ps1)
 
-## Demos of Get-GPT3Completion
+## Demos of the PowerShellAI
 
-Here are demos of `Get-GPT3Completion` posting your request to the OpenAI GPT-3 API and returning the completion:
+Here are some vidoes of `PowerShellAI` in action:
 
 | Description | YouTube Video |
 |--|--|
