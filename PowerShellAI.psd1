@@ -11,6 +11,7 @@ PowerShell GPT AI module allows to integrate with OpenAI API and access GPT-3 mo
 '@
 
     FunctionsToExport = @(
+        'ai'
         'Disable-AIShortCutKey'
         'Enable-AIShortCutKey'
         'Get-GPT3Completion'
