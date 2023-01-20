@@ -1,4 +1,5 @@
 # v?.?.?
+- Added `copilot` - Makes the request to GPT, parses the response and displays it in a box and then prompts the user to run the code or not
 
 - Added `ai` function:
     - Experimental function enables piping

@@ -175,3 +175,11 @@ git status | ai "create a detailed git message"
 Commit message:
 Added PowerShellAI.psd1, README.md, changelog.md, and Public/ai.ps1 to dcf-spike-piping-to-ai-function branch. Updated PowerShellAI.psd1 and README.md with new changes. Added changelog.md to track changes. Added Public/ai.ps1 to enable piping to AI function.
 ```
+
+# Copilot at the PowerShell Console
+
+Thank you to [Clem Messerli](https://twitter.com/ClemMesserli/status/1616312238209376260?s=20&t=KknO2iPk3yrQ7x42ZayS7g) for posting a great prompt to show `copilot` in action.
+
+![Alt text](media/Copilot-GPT-At-The-CLI.png)
+
+Check out the [video of `copilot` in action]()
