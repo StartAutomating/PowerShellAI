@@ -17,7 +17,8 @@ function ai {
     param(
         $inputPrompt,
         [Parameter(ValueFromPipeline = $true)]
-        $target
+        $pipelineInput,
+        $max_tokens = 256
     )
 
     Begin {
@@ -25,7 +26,7 @@ function ai {
     }
 
     Process {
-        $lines += $target
+        $lines += $pipel
     }
 
     End {
@@ -35,6 +36,6 @@ $(($lines | Out-String).Trim())
 
 "@
         
-        Get-GPT3Completion $fullPrompt.Trim()
+        Get-GPT3Completion -prompt $fullPrompt.Trim() -max_tokens $max_tokens
     }
 }
