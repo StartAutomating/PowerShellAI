@@ -29,16 +29,6 @@ function ai {
     }
 
     End {
-        # $stop = "`n`n"
-        # $stop = '```'
-        # $stop ="``````"
-
-        # $fullPrompt = $inputPrompt
-        # $fullPrompt += $stop
-        # $fullPrompt += ($lines | Out-String).Trim()
-
-        # Get-GPT3Completion $fullPrompt.Trim() -stop $stop
-
         $fullPrompt = @"
 $($inputPrompt)
 $(($lines | Out-String).Trim())
