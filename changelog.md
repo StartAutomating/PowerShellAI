@@ -1,5 +1,7 @@
 # v0.3.2
 - Added `Get-DalleImage`: Given a description, the model will return an image
+- Added `Set-DalleImageAsWallpaper`: Given a description, the model will return an image form DALL-E and set it as the wallpaper
+
 # v0.3.1
 - Added -max_tokens parameter to the `ai` function
 

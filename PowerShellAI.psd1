@@ -17,6 +17,7 @@ PowerShell GPT AI module allows to integrate with OpenAI API and access GPT-3 mo
         'Enable-AIShortCutKey'
         'Get-DalleImage'
         'Get-GPT3Completion'
+        'Set-DalleImageAsWallpaper'
     )
 
     AliasesToExport   = @(
