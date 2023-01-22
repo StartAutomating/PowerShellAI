@@ -53,7 +53,7 @@ function Get-GPT3Completion {
         [Switch]$Raw
     )
 
-    if ([string]::IsNullOrEmpty($env:OpenAIKey)) {
+    if (!(Test-OpenAIKey)) {
         throw 'You must set the $env:OpenAIKey environment variable to your OpenAI API key. https://beta.openai.com/account/api-keys'
     }
 
