@@ -26,6 +26,13 @@ Check out these PowerShell scripts to see how easy it is to get started with AI 
 | Disable-AIShortCutKey | Disable the <kbd>ctrl+g</kbd> shortcut key go getting completions | [Disable-AIShortCutKey.ps1](./Public/Disable-AIShortCutKey.ps1) |
 | Enable-AIShortCutKey | Enable the <kbd>ctrl+g</kbd> | [Enable-AIShortCutKey.ps1](./Public/Enable-AIShortCutKey.ps1) |
 | Get-GPT3Completion | Get a completion from the OpenAI GPT-3 API | [Get-GPT3Completion.ps1](./Public/Get-GPT3Completion.ps1)
+| Get-DalleImage | Get an image from the OpenAI DALL-E API | [Get-DalleImage.ps1](./Public/Get-DalleImage.ps1)
+| ai | Experimental AI function that you can pipe all sorts of things into and get back a completion | [ai.ps1](./Public/ai.ps1)
+| copilot | Makes the request to GPT, parses the response and displays it in a box and then prompts the user to run the code or not. | [copilot.ps1](./Public/copilot.ps1)
+| Get-DalleImage | Get an image from the OpenAI DALL-E API | [Get-DalleImage.ps1](./Public/Get-DalleImage.ps1)
+| Set-DalleImageAsWallpaper | Set the image from the OpenAI DALL-E API as the wallpaper | [Set-DalleImageAsWallpaper.ps1](./Public/Set-DalleImageAsWallpaper.ps1)
+
+<br/>
 
 ## Demos of the PowerShellAI
 
@@ -185,3 +192,19 @@ Thank you to [Clem Messerli](https://twitter.com/ClemMesserli/status/16163122382
 ![Alt text](media/Copilot-GPT-At-The-CLI.png)
 
 Check out the [video of `copilot` in action]()
+
+# DALL-E
+
+The [DALL-E](https://openai.com/blog/dall-e/) API is a new API from OpenAI that allows you to generate images from text. The API is currently in beta and is free to use.
+
+Use this function to generate an image from text and set it as your desktop background.
+
+```powershell
+Set-DalleImageAsBackground "A picture of a cat"
+```
+
+You can also use the `Get-DalleImage` function to get the image and it saves to a temp file, ready to use.
+
+```powershell
+Get-DalleImage "A picture of a cat" 
+```

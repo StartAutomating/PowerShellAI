@@ -1,6 +1,11 @@
-# v-0.3.1
+# v0.3.2
+- Added `Get-DalleImage`: Given a description, the model will return an image
+- Added `Set-DalleImageAsWallpaper`: Given a description, the model will return an image form DALL-E and set it as the wallpaper
+
+# v0.3.1
 - Added -max_tokens parameter to the `ai` function
-# v-0.3.0
+
+# v0.3.0
 - Added `copilot` - Makes the request to GPT, parses the response and displays it in a box and then prompts the user to run the code or not. Check the [README.md](README.md) for me details.
 
 - Added `ai` function:
