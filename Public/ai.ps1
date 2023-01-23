@@ -26,7 +26,7 @@ function ai {
     }
 
     Process {
-        $lines += $pipel
+        $lines += $pipelineInput
     }
 
     End {
