@@ -192,3 +192,19 @@ Thank you to [Clem Messerli](https://twitter.com/ClemMesserli/status/16163122382
 ![Alt text](media/Copilot-GPT-At-The-CLI.png)
 
 Check out the [video of `copilot` in action]()
+
+# DALL-E
+
+The [DALL-E](https://openai.com/blog/dall-e/) API is a new API from OpenAI that allows you to generate images from text. The API is currently in beta and is free to use.
+
+Use this function to generate an image from text and set it as your desktop background.
+
+```powershell
+Set-DalleImageAsBackground "A picture of a cat"
+```
+
+You can also use the `Get-DalleImage` function to get the image and it saves to a temp file, ready to use.
+
+```powershell
+Get-DalleImage "A picture of a cat" 
+```
