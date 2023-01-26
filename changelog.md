@@ -1,3 +1,6 @@
+# v0.3.3
+- Check if `$result.choices` is not null before trying to access it. Thank you [StartAutomating](https://github.com/StartAutomating)
+
 # v0.3.2
 - Added `Get-DalleImage`: Given a description, the model will return an image
 - Added `Set-DalleImageAsWallpaper`: Given a description, the model will return an image form DALL-E and set it as the wallpaper
