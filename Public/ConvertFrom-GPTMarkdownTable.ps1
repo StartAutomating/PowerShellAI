@@ -3,12 +3,12 @@ function ConvertFrom-GPTMarkdownTable {
         $markdown
     )
  
-    $lines = $markdown -split "`n"
+    $lines = $markdown.Trim() -split "`n"
 
     $(
         foreach ($line in $lines) {
             if ($line -match '[A-Za-z0-9]') {
-                $line -replace "^\|", ""
+                $line.Trim() -replace "^\|", ""
             }
         }
     ) | ConvertFrom-Csv -Delimiter '|'

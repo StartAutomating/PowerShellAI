@@ -100,4 +100,34 @@ Celery | 16 | 0 | 3 | 0
         $result[-1].'Term ' | Should -Be '1817-1825 '
         $result[-1].'Vice President ' | Should -Be 'Daniel D. Tompkins '
     }
+
+    It "ConvertFrom-GPTMarkdownTable - with whitespace" {
+        $markdown = @"
+
+
+        | Column 1 | Column 2 | Column 3 |
+        | -------- | -------- | -------- |
+        | Cell 1   | Cell 2   | Cell 3   |
+        | Cell 4   | Cell 5   | Cell 6   |
+        | Cell 7   | Cell 8   | Cell 9   |
+"@
+        $result = ConvertFrom-GPTMarkdownTable $markdown
+
+        $result | Should -Not -BeNullOrEmpty
+        $result.Count | Should -Be 3
+
+        $names = $result[0].psobject.Properties.Name
+        $names.Count | Should -Be 3
+        $names[0] | Should -Be 'Column 1 '
+        $names[1] | Should -Be 'Column 2 '
+        $names[2] | Should -Be 'Column 3 '
+
+        $result[0].'Column 1 ' | Should -Be 'Cell 1   '
+        $result[0].'Column 2 ' | Should -Be 'Cell 2   '
+        $result[0].'Column 3 ' | Should -Be 'Cell 3   '
+
+        $result[-1].'Column 1 ' | Should -Be 'Cell 7   '
+        $result[-1].'Column 2 ' | Should -Be 'Cell 8   '
+        $result[-1].'Column 3 ' | Should -Be 'Cell 9   '
+    }
 }
