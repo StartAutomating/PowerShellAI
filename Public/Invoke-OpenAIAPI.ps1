@@ -1,6 +1,5 @@
-
-function Invoke-OpenAIAPI {
-    
+function Invoke-OpenAIAPI {    
+    [CmdletBinding()]
     <#
         .SYNOPSIS
         Invoke the OpenAI API

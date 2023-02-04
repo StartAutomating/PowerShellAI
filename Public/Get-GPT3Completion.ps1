@@ -53,9 +53,9 @@ function Get-GPT3Completion {
         [Switch]$Raw
     )
 
-    if (!(Test-OpenAIKey)) {
-        throw 'You must set the $env:OpenAIKey environment variable to your OpenAI API key. https://beta.openai.com/account/api-keys'
-    }
+    # if (!(Test-OpenAIKey)) {
+    #     throw 'You must set the $env:OpenAIKey environment variable to your OpenAI API key. https://beta.openai.com/account/api-keys'
+    # }
 
     $body = [ordered]@{
         model             = $model
@@ -70,31 +70,8 @@ function Get-GPT3Completion {
 
     $body = $body | ConvertTo-Json -Depth 5
     $body = [System.Text.Encoding]::UTF8.GetBytes($body)
-    $params = @{
-        Uri         = "https://api.openai.com/v1/completions" 
-        Method      = 'Post' 
-        Headers     = @{Authorization = "Bearer $($env:OpenAIKey)" } 
-        ContentType = 'application/json'
-        #body        = $body | ConvertTo-Json -Depth 5
-        body        = $body
-    }    
     
-    #$params["body"] = [System.Text.Encoding]::UTF8.GetBytes($json)
-    
-    if ($PSCmdlet.MyInvocation.BoundParameters["Verbose"].IsPresent) {
-        if ($env:USERNAME -eq 'finke') { $exclude = 'Headers' }
-
-        $params | 
-        ConvertTo-Json -Depth 10 | 
-        ConvertFrom-Json | 
-        Select-Object * -ExcludeProperty $exclude |
-        Format-List |
-        Out-Host
-    }
-
-    # Write-Progress -Activity 'PowerShellAI' -Status 'Processing GPT repsonse. Please wait...'
-
-    $result = Invoke-RestMethod @params
+    $result = Invoke-OpenAIAPI -Uri (Get-OpenAICompletionsURI) -Method 'Post' -Body $body
 
     if ($Raw) {
         $result
