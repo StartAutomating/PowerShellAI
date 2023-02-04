@@ -7,6 +7,9 @@ function Get-OpenAIModel {
         .DESCRIPTION
         Returns full model properties, or just the names (id values)
 
+        .PARAMETER Name
+        The name of the model to return - wildcards are supported
+
         .PARAMETER Raw
         Returns the raw JSON response from the API
 
@@ -22,6 +25,7 @@ function Get-OpenAIModel {
         Reference: https://platform.openai.com/docs/api-reference/models
 	#>
     param(
+        $Name,
         [Switch]$Raw
     )
 
@@ -31,6 +35,8 @@ function Get-OpenAIModel {
         $response
     }
     else {
-        $response.data.id
+        if (!$Name) { $Name = '*' }
+
+        $response.data.id | Where-Object { $_ -like $Name }
     }
 }
