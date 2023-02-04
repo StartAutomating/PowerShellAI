@@ -27,10 +27,6 @@ function Get-DalleImage {
         [Switch]$Raw
     )
 
-    if (!(Test-OpenAIKey)) {
-        throw 'You must set the $env:OpenAIKey environment variable to your OpenAI API key. https://beta.openai.com/account/api-keys'
-    }
-
     $targetSize = switch ($Size) {
         256 { '256x256' }
         512 { '512x512' }
@@ -40,17 +36,9 @@ function Get-DalleImage {
     $body = [ordered]@{
         prompt = $Description
         size   = $targetSize
-    }
-  
-    $params = @{
-        Uri         = "https://api.openai.com/v1/images/generations" 
-        Method      = 'Post' 
-        Headers     = @{Authorization = "Bearer $($env:OpenAIKey)" } 
-        ContentType = 'application/json'
-        body        = $body | ConvertTo-Json -Depth 5
-    }    
-  
-    $result = Invoke-RestMethod @params
+    } | ConvertTo-Json
+
+    $result = Invoke-OpenAIAPI -Uri (Get-OpenAIImagesGenerationsURI) -Body $body -Method Post
   
     if ($Raw) {
         return $result
