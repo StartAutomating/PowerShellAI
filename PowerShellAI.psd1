@@ -18,6 +18,11 @@ PowerShell GPT AI module allows to integrate with OpenAI API and access GPT-3 mo
         'Enable-AIShortCutKey'
         'Get-DalleImage'
         'Get-GPT3Completion'
+        'Get-OpenAIBaseRestURI'
+        'Get-OpenAICompletionsURI'
+        'Get-OpenAIImagesGenerationsURI'
+        'Get-OpenAIModelsURI'
+        'Get-OpenAIModerationsURI'
         'Set-DalleImageAsWallpaper'
     )
 
