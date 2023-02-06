@@ -7,7 +7,7 @@
     Copyright         = 'c 2023 All rights reserved.'
 
     Description       = @'
-PowerShell GPT AI module allows to integrate with OpenAI API and access GPT-3 model and easily to use with other PowerShell scripts and tools.
+The PowerShell AI module integrates with the OpenAI API and let's you easily access the GPT models for text completion, image generation and more.
 '@
 
     FunctionsToExport = @(
@@ -22,6 +22,11 @@ PowerShell GPT AI module allows to integrate with OpenAI API and access GPT-3 mo
         'Get-OpenAIModeration'
         'Invoke-OpenAIAPI'
         'Set-DalleImageAsWallpaper'
+        'Get-OpenAIBaseRestUri'
+        'Get-OpenAICompletionsUri'
+        'Get-OpenAIImagesGenerationsUri'
+        'Get-OpenAIModelsUri'
+        'Get-OpenAIModerationsUri'
     )
 
     AliasesToExport   = @(
