@@ -4,7 +4,7 @@ function Get-OpenAIBaseRestURI {
         Base url for OpenAIBase API
         
         .Example
-        Invoke-RestMethod ((Get-GHBaseRestURI)+'/repos/powershell/powershell')
+        Invoke-OpenAIAPI ((Get-GHBaseRestURI)+'/models')
     #>
     
     'https://api.openai.com/v1'
