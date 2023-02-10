@@ -1,5 +1,8 @@
 on:
   push:
+    paths-ignore:
+      - 'README.md'
+      - 'CommunityContributions/**'
     branches:
       - master
 
