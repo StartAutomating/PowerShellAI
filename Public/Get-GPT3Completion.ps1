@@ -39,16 +39,16 @@ function Get-GPT3Completion {
         [Parameter(Mandatory)]
         $prompt,
         $model = 'text-davinci-003',
-        [ValidateRange(0, 1)]
-        [int]$temperature,
+        [ValidateRange(0, 2)]
+        [decimal]$temperature = 1.0,
         [ValidateRange(1, 2048)]
         [int]$max_tokens = 256,
         [ValidateRange(0, 1)]
-        [int]$top_p = 1,
+        [decimal]$top_p = 1.0,
         [ValidateRange(-2, 2)]
-        [int]$frequency_penalty = 0,
+        [decimal]$frequency_penalty = 0,
         [ValidateRange(-2, 2)]
-        [int]$presence_penalty = 0,
+        [decimal]$presence_penalty = 0,
         $stop,
         [Switch]$Raw
     )
