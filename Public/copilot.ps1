@@ -29,6 +29,8 @@ function copilot {
     param(
         [Parameter(Mandatory)]
         $inputPrompt,
+        [ValidateRange(0,2)]
+        [decimal]$temperature = 1.0,
         # The maximum number of tokens to generate. default 256
         $max_tokens = 256,
         # Don't show prompt for choice
@@ -47,7 +49,7 @@ function copilot {
     $prompt = "using {0} {1}: {2}`n" -f $shell, $promptComments, $inputPrompt
     $prompt += '```'
 
-    $completion = Get-GPT3Completion -prompt $prompt -max_tokens $max_tokens -stop '```'
+    $completion = Get-GPT3Completion -prompt $prompt -max_tokens $max_tokens -temperature $temperature -stop '```'
     $completion = $completion -split "`n"
     
     if ($completion[0] -ceq 'powershell') {

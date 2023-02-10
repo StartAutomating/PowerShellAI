@@ -1,3 +1,9 @@
+# v0.4.1
+- Thank you to [Pieter Jan Geutjens](https://github.com/pjgeutjens)
+    - Added `-temperature` param to `ai` and `copilot`
+    - Changed the input type from `int` to `decimal`
+    - Changed the range on temperature from [0,1] to [0,2] according to the API documentation
+
 # v0.4.0
 - Refactored to use `Invoke-OpenAIAPI` function. This function is used by all the other functions in the module. This allows for a single place to update the API URL and the API Key. 
 - Add `Get-*` functions for OpenAI URIs

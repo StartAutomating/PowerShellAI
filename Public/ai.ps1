@@ -18,6 +18,8 @@ function ai {
         $inputPrompt,
         [Parameter(ValueFromPipeline = $true)]
         $pipelineInput,
+        [ValidateRange(0,2)]
+        [decimal]$temperature = 1.0,
         $max_tokens = 256
     )
 
@@ -36,6 +38,6 @@ $(($lines | Out-String).Trim())
 
 "@
         
-        Get-GPT3Completion -prompt $fullPrompt.Trim() -max_tokens $max_tokens
+        Get-GPT3Completion -prompt $fullPrompt.Trim() -max_tokens $max_tokens -temperature $temperature
     }
 }
