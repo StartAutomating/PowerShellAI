@@ -19,7 +19,7 @@ function ai {
         [Parameter(ValueFromPipeline = $true)]
         $pipelineInput,
         [ValidateRange(0,2)]
-        [decimal]$temperature = 1.0,
+        [decimal]$temperature = 0.0,
         $max_tokens = 256
     )
 

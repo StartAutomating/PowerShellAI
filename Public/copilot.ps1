@@ -30,7 +30,7 @@ function copilot {
         [Parameter(Mandatory)]
         $inputPrompt,
         [ValidateRange(0,2)]
-        [decimal]$temperature = 1.0,
+        [decimal]$temperature = 0.0,
         # The maximum number of tokens to generate. default 256
         $max_tokens = 256,
         # Don't show prompt for choice

@@ -40,7 +40,7 @@ function Get-GPT3Completion {
         $prompt,
         $model = 'text-davinci-003',
         [ValidateRange(0, 2)]
-        [decimal]$temperature = 1.0,
+        [decimal]$temperature = 0.0,
         [ValidateRange(1, 2048)]
         [int]$max_tokens = 256,
         [ValidateRange(0, 1)]
