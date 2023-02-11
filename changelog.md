@@ -1,3 +1,6 @@
+# v0.4.2
+- Change `-temperature` default to 0
+
 # v0.4.1
 - Thank you to [Pieter Jan Geutjens](https://github.com/pjgeutjens)
     - Added `-temperature` param to `ai` and `copilot`
