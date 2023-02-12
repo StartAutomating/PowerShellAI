@@ -32,16 +32,19 @@ function Get-OpenAIEdit {
 		$InputText,
 		[Parameter(Mandatory)]
 		$Instruction,
-		[Parameter()][string][ValidateSet('text-davinci-edit-001','code-davinci-edit-001')]$model = 'text-davinci-edit-001',
-		[Parameter()]$edits = 1,
+		[Parameter()]
+		[ValidateSet('text-davinci-edit-001', 'code-davinci-edit-001')]
+		$model = 'text-davinci-edit-001',
+		[Parameter()]
+		$numberOfEdits = 1,
 		[Switch]$Raw
 	)
 
 	$body = @{
-		"model" = $model
-		"input" = $InputText
+		"model"       = $model
+		"input"       = $InputText
 		"instruction" = $Instruction
-		"n" = $edits
+		"n"           = $numberOfEdits
 	} | ConvertTo-Json
 
 	$response = Invoke-OpenAIAPI -Uri (Get-OpenAIEditsURI) -Method Post -Body $body
@@ -50,6 +53,6 @@ function Get-OpenAIEdit {
 		$response
 	}
 	else {
-		$response.choices | Select-Object -ExpandProperty text
+		$response.choices[0].text
 	}
 }
