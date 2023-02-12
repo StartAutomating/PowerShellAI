@@ -29,5 +29,11 @@ Describe "OpenAIUri" -Tag 'OpenAIUri' {
         $actual = Get-OpenAIImagesGenerationsURI                  
 
         $actual | Should -Be 'https://api.openai.com/v1/images/generations'
-    }            
+    }
+
+    It "Should return the OpenAI Edit URI" {
+        $actual = Get-OpenAIEditsURI                  
+
+        $actual | Should -Be 'https://api.openai.com/v1/edits'
+    }
 }

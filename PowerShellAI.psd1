@@ -17,7 +17,7 @@ The PowerShell AI module integrates with the OpenAI API and let's you easily acc
         'Disable-AIShortCutKey'
         'Enable-AIShortCutKey'
         'Get-DalleImage'
-        'Get-GPT3Completion'        
+        'Get-GPT3Completion'
         'Get-OpenAIModel'
         'Get-OpenAIModeration'
         'Invoke-OpenAIAPI'
@@ -27,6 +27,8 @@ The PowerShell AI module integrates with the OpenAI API and let's you easily acc
         'Get-OpenAIImagesGenerationsUri'
         'Get-OpenAIModelsUri'
         'Get-OpenAIModerationsUri'
+		'Get-OpenAIEditsUri'
+		'Get-OpenAIEdit'
     )
 
     AliasesToExport   = @(
