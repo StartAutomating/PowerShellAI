@@ -1,3 +1,6 @@
+# v0.4.3
+- Added `-Method POST` to `Get-OpenAIModeration`. Thank you [Skatterbrainz](https://github.com/Skatterbrainz)
+
 # v0.4.2
 - Change `-temperature` default to 0
 
