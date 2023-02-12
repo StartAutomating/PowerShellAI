@@ -37,11 +37,17 @@ function Get-OpenAIEdit {
 		$model = 'text-davinci-edit-001',
 		[Parameter()]
 		$numberOfEdits = 1,
+		[ValidateRange(0, 2)]
+		[decimal]$temperature = 0.0,
+		[ValidateRange(0, 1)]
+		[decimal]$top_p = 1.0,
 		[Switch]$Raw
 	)
 
 	$body = @{
 		"model"       = $model
+		"temperature" = $temperature
+		"top_p"       = $top_p
 		"input"       = $InputText
 		"instruction" = $Instruction
 		"n"           = $numberOfEdits
