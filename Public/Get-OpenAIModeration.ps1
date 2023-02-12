@@ -30,7 +30,7 @@ function Get-OpenAIModeration {
         "input" = $InputText
     } | ConvertTo-Json
 
-    $response = Invoke-OpenAIAPI -Uri (Get-OpenAIModerationsURI) -Body $body 
+    $response = Invoke-OpenAIAPI -Uri (Get-OpenAIModerationsURI) -Body $body -Method POST
 
     if ($Raw) {
         $response
