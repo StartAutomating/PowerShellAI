@@ -1,5 +1,4 @@
 function Get-GPT3Completion {
-    [CmdletBinding()]
     <#
         .SYNOPSIS
         Get a completion from the OpenAI GPT-3 API
@@ -34,6 +33,7 @@ function Get-GPT3Completion {
         .EXAMPLE
         Get-GPT3Completion -prompt "What is 2%2? - please explain"
     #>
+    [CmdletBinding()]
     [alias("gpt")]
     param(
         [Parameter(Mandatory)]

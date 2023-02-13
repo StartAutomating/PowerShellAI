@@ -1,3 +1,6 @@
+# v0.4.5
+- Moved [CmdletBinding()] to the above param. Synopsis was not displaying.
+
 # v0.4.4
 - Added `Get-OpenAIEdit`. Given a prompt and an instruction, the model will return an edited version of the prompt. Thank you [Skatterbrainz](https://github.com/Skatterbrainz)
 
