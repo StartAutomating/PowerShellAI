@@ -237,7 +237,25 @@ function greet {
 }
 ```
 
+# New-Spreadsheet
 
+Creates a new spreadsheet from a prompt
+
+*Note*: This requires the ImportExcel module to be installed
+
+```powershell
+Install-Module -Name ImportExcel
+```
+
+In action:
+
+```powershell
+New-Spreadsheet 'population of india, china, usa, euroupe'
+```
+
+![Alt text](media/NewSpreadsheet.png)
+
+Try it out: `New-Spreadsheet "list of first 5 US presidents name, term"`
 
 # DALL-E
 
