@@ -25,6 +25,7 @@ Check out these PowerShell scripts to see how easy it is to get started with AI 
 |--|--|--|
 | Disable-AIShortCutKey | Disable the <kbd>ctrl+g</kbd> shortcut key go getting completions | [Disable-AIShortCutKey.ps1](./Public/Disable-AIShortCutKey.ps1) |
 | Enable-AIShortCutKey | Enable the <kbd>ctrl+g</kbd> | [Enable-AIShortCutKey.ps1](./Public/Enable-AIShortCutKey.ps1) |
+| Get-OpenAIEdit | Given a prompt and an instruction, the model will return an edited version of the prompt | [Get-OpenAIEdit.ps1](./Public/Get-OpenAIEdit.ps1)
 | Get-GPT3Completion | Get a completion from the OpenAI GPT-3 API | [Get-GPT3Completion.ps1](./Public/Get-GPT3Completion.ps1)
 | Get-DalleImage | Get an image from the OpenAI DALL-E API | [Get-DalleImage.ps1](./Public/Get-DalleImage.ps1)
 | ai | Experimental AI function that you can pipe all sorts of things into and get back a completion | [ai.ps1](./Public/ai.ps1)
@@ -196,6 +197,47 @@ Thank you to [Clem Messerli](https://twitter.com/ClemMesserli/status/16163122382
 ![Alt text](media/Copilot-GPT-At-The-CLI.png)
 
 Check out the [video of `copilot` in action]()
+
+# Code editing example
+
+Unlike completions, edits takes two inputs: the `text` to edit and an `instruction`. Here the `model` is set to `code-davinci-edit-001` because we're working with PowerShell code.
+
+- Here you're passing in the string that is a PowerShell function.
+- The `instruction` is to `add a comment-based help detailed description`
+
+```powershell
+Get-OpenAIEdit @'
+function greet {
+    param($n)
+
+    "Hello $n"
+}
+'@ -Instruction 'add comment-based help detailed description' -model 'code-davinci-edit-001'
+```
+
+The GPT AI returns:
+
+```powershell
+<#
+    .SYNOPSIS
+        Greet someone
+    .DESCRIPTION
+        This function greets someone
+    .PARAMETER n
+        The name of the person to greet
+    .EXAMPLE
+        greet -n "John"
+    .NOTES
+        This is a note
+#>
+function greet {
+    param($n)
+
+    "Hello $n"
+}
+```
+
+
 
 # DALL-E
 
