@@ -27,13 +27,13 @@ function Get-OpenAIEdit {
 	#>	
 	[CmdletBinding()]
 	param(
-		[Parameter(Mandatory)]
+		[Parameter(Mandatory = $true, ValueFromPipeline = $true)]
 		$InputText,
-		[Parameter(Mandatory)]
+		[Parameter(Mandatory = $true, Position = 1)]
 		$Instruction,
 		[Parameter()]
 		[ValidateSet('text-davinci-edit-001', 'code-davinci-edit-001')]
-		$model = 'text-davinci-edit-001',
+		$model = 'code-davinci-edit-001',
 		[Parameter()]
 		$numberOfEdits = 1,
 		[ValidateRange(0, 2)]
@@ -43,21 +43,37 @@ function Get-OpenAIEdit {
 		[Switch]$Raw
 	)
 
-	$body = @{
-		"model"       = $model
-		"temperature" = $temperature
-		"top_p"       = $top_p
-		"input"       = $InputText
-		"instruction" = $Instruction
-		"n"           = $numberOfEdits
-	} | ConvertTo-Json
-
-	$response = Invoke-OpenAIAPI -Uri (Get-OpenAIEditsURI) -Method Post -Body $body
-
-	if ($Raw) {
-		$response
+	begin {
+		$pipelineInput = [System.Collections.Generic.List[Object]]::new()
 	}
-	else {
-		$response.choices[0].text
+
+	process {
+		$pipelineInput.Add($_)
+	}
+
+	end {
+		if (-not $pipelineInput){
+			$inputBody = $InputText
+		} else {
+			$inputBody = $pipelineInput | Out-String
+		}
+
+		$body = @{
+			"model"       = $model
+			"temperature" = $temperature
+			"top_p"       = $top_p
+			"input"       = $inputBody
+			"instruction" = $Instruction
+			"n"           = $numberOfEdits
+		} | ConvertTo-Json
+	
+		$response = Invoke-OpenAIAPI -Uri (Get-OpenAIEditsURI) -Method Post -Body $body
+	
+		if ($Raw) {
+			$response
+		}
+		else {
+			$response.choices[0].text
+		}
 	}
 }
