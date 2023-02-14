@@ -212,7 +212,7 @@ function greet {
 
     "Hello $n"
 }
-'@ -Instruction 'add comment-based help detailed description' -model 'code-davinci-edit-001'
+'@ -Instruction 'add comment-based help detailed description'
 ```
 
 The GPT AI returns:
