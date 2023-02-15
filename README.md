@@ -212,7 +212,7 @@ function greet {
 
     "Hello $n"
 }
-'@ -Instruction 'add comment-based help detailed description' -model 'code-davinci-edit-001'
+'@ -Instruction 'add comment-based help detailed description'
 ```
 
 The GPT AI returns:
@@ -237,7 +237,29 @@ function greet {
 }
 ```
 
+# New-Spreadsheet
 
+Creates a new spreadsheet from a prompt
+
+*Note*: This requires the ImportExcel module to be installed
+
+```powershell
+Install-Module -Name ImportExcel
+```
+
+In action:
+
+```powershell
+New-Spreadsheet 'population of india, china, usa, euroupe'
+```
+
+![Alt text](media/NewSpreadsheet.png)
+
+Try it out: `New-Spreadsheet "list of first 5 US presidents name, term"`
+
+## Check out the Video
+
+<a href="https://youtu.be/Aehsgtll1CA"><img src="https://img.youtube.com/vi/Aehsgtll1CA/0.jpg" width="200"> 
 
 # DALL-E
 

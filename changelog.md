@@ -1,5 +1,7 @@
 # v0.4.5
-- Moved [CmdletBinding()] to the above param. Synopsis was not displaying.
+- Added `New-Spreadsheet` - Creates a new Excel spreadsheet from a prompt
+- Moved [CmdletBinding()] above param. Synopsis was not displaying.
+- Changed the default model for `Get-OpenAIEdit` to `code-davinci-edit-001`
 
 # v0.4.4
 - Added `Get-OpenAIEdit`. Given a prompt and an instruction, the model will return an edited version of the prompt. Thank you [Skatterbrainz](https://github.com/Skatterbrainz)
