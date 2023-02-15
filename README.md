@@ -257,6 +257,10 @@ New-Spreadsheet 'population of india, china, usa, euroupe'
 
 Try it out: `New-Spreadsheet "list of first 5 US presidents name, term"`
 
+## Check out the Video
+
+<a href="https://youtu.be/Aehsgtll1CA"><img src="https://img.youtube.com/vi/Aehsgtll1CA/0.jpg" width="200"> 
+
 # DALL-E
 
 The [DALL-E](https://openai.com/blog/dall-e/) API is a new API from OpenAI that allows you to generate images from text. The API is currently in beta and is free to use.
