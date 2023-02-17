@@ -58,6 +58,6 @@ function Get-OpenAIEdit {
 		$response
 	}
 	else {
-		$response.choices[0].text
+		$response.choices | select text
 	}
 }
