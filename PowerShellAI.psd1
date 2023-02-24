@@ -22,6 +22,7 @@ The PowerShell AI module integrates with the OpenAI API and let's you easily acc
         'Get-OpenAIModeration'
         'Invoke-OpenAIAPI'
         'Set-DalleImageAsWallpaper'
+        'Set-OpenAIKey'
         'Get-OpenAIBaseRestUri'
         'Get-OpenAICompletionsUri'
         'Get-OpenAIImagesGenerationsUri'
@@ -29,6 +30,7 @@ The PowerShell AI module integrates with the OpenAI API and let's you easily acc
         'Get-OpenAIModerationsUri'
 		'Get-OpenAIEditsUri'
 		'Get-OpenAIEdit'
+        'New-SpreadSheet'
     )
 
     AliasesToExport   = @(

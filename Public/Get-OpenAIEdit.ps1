@@ -13,7 +13,7 @@ function Get-OpenAIEdit {
 	The instruction that tells the model how to edit the prompt
 	
 	.PARAMETER model
-	ID of the model to use. You can use the text-davinci-edit-001 or code-davinci-edit-001 model with this endpoint. Default is text-davinci-edit-001
+	ID of the model to use. You can use the text-davinci-edit-001 or code-davinci-edit-001 model with this endpoint. Default is code-davinci-edit-001 model
 	
 	.PARAMETER edits
 	How many edits to generate for the input and instruction
@@ -72,8 +72,7 @@ function Get-OpenAIEdit {
 		if ($Raw) {
 			$response
 		}
-		else {
-			$response.choices[0].text
-		}
-	}
+    else {
+      $response.choices | select text
+    }
 }
