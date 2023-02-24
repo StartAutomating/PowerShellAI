@@ -4,7 +4,10 @@
 - Changed the default model for `Get-OpenAIEdit` to `code-davinci-edit-001`
 - Thank you [Skatterbrainz](https://github.com/Skatterbrainz)
     - Added [Git-Examples.ipynb](CommunityContributions/02-GitAndGPT/Git-Examples.ipynb) 
-    - Updated `Get-OpenAIEdit.ps1` to return all  `text`.
+    - Updated `Get-OpenAIEdit.ps1` to return all  `text`
+- Thank you [Skatterbrainz](https://github.com/Skatterbrainz)
+- Thank you [Kris Borowinski](https://github.com/kborowinski)
+    - Wired in A-Z ability to provide `OpenAIKey` via secure string
 
 # v0.4.4
 - Added `Get-OpenAIEdit`. Given a prompt and an instruction, the model will return an edited version of the prompt. Thank you [Skatterbrainz](https://github.com/Skatterbrainz)
