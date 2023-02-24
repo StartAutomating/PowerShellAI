@@ -2,6 +2,9 @@
 - Added `New-Spreadsheet` - Creates a new Excel spreadsheet from a prompt
 - Moved [CmdletBinding()] above param. Synopsis was not displaying.
 - Changed the default model for `Get-OpenAIEdit` to `code-davinci-edit-001`
+- Thank you [Skatterbrainz](https://github.com/Skatterbrainz)
+    - Added [Git-Examples.ipynb](CommunityContributions/02-GitAndGPT/Git-Examples.ipynb) 
+    - Updated `Get-OpenAIEdit.ps1` to return all  `text`.
 
 # v0.4.4
 - Added `Get-OpenAIEdit`. Given a prompt and an instruction, the model will return an edited version of the prompt. Thank you [Skatterbrainz](https://github.com/Skatterbrainz)
