@@ -72,7 +72,8 @@ function Get-OpenAIEdit {
 		if ($Raw) {
 			$response
 		}
-    else {
-      $response.choices | select text
-    }
+		else {
+			$response.choices | select text
+		}
+	}
 }
