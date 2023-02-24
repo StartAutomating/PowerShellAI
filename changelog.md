@@ -1,3 +1,7 @@
+# v0.4.6
+- Thank you to [Pieter Jan Geutjens](https://github.com/pjgeutjens)
+    - `Get-OpenAIEdit` works both with pipeline input as well as `-InputText` param
+
 # v0.4.5
 - Added `New-Spreadsheet` - Creates a new Excel spreadsheet from a prompt
 - Moved [CmdletBinding()] above param. Synopsis was not displaying.
