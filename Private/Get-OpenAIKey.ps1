@@ -1,7 +1,7 @@
 function Get-OpenAIKey {
     <#
         .SYNOPSIS
-        Gets the OpenAIKey module scope variable or environment variable is set.
+        Gets the OpenAIKey module scope variable or environment variable.
 
         .EXAMPLE
         Get-OpenAIKey
