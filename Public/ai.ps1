@@ -8,7 +8,7 @@ function ai {
         .EXAMPLE
         ai "list of planets only names as json" |
         .EXAMPLE
-        ai "list of planets only names as json" | ai 'convert to  xml' 
+        ai "list of planets only names as json" | ai 'convert to  xml'
         .EXAMPLE
         ai "list of planets only names as json" | ai 'convert to  xml' | ai 'convert to  powershell'
         .EXAMPLE
@@ -37,7 +37,7 @@ $($inputPrompt)
 $(($lines | Out-String).Trim())
 
 "@
-        
-        Get-GPT3Completion -prompt $fullPrompt.Trim() -max_tokens $max_tokens -temperature $temperature
+
+        (Get-GPT3Completion -prompt $fullPrompt.Trim() -max_tokens $max_tokens -temperature $temperature).Trim()
     }
 }
