@@ -73,7 +73,7 @@ function Get-OpenAIEdit {
 			$response
 		}
 		else {
-			$response.choices | select text
+			$response.choices | Select-Object text
 		}
 	}
 }
