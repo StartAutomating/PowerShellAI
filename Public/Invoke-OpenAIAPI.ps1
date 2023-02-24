@@ -34,7 +34,7 @@ function Invoke-OpenAIAPI {
     $params = @{
         Uri         = $Uri
         Method      = $Method
-        Headers     = @{Authorization = "Bearer $($env:OpenAIKey)" } 
+        Headers     = @{Authorization = 'Bearer {0}' -f (Get-OpenAIKey)} 
         ContentType = 'application/json'
         body        = $Body
     }
