@@ -1,3 +1,7 @@
+# v0.4.7
+- Thank you [Kris Borowinski](https://github.com/kborowinski)
+    - On PS 6 and higher use Invoke-RestMethod with secure Token
+
 # v0.4.6
 - Thank you to [Pieter Jan Geutjens](https://github.com/pjgeutjens)
     - `Get-OpenAIEdit` works both with pipeline input as well as `-InputText` param
