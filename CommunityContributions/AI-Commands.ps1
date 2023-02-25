@@ -1,4 +1,6 @@
 ﻿#Requires -Modules PowerShellAI
+ 
+#Marv is a quirky chatbot, you can get all types of weird and wonderful answer from Marv, just ask away using the Question parameter 
 Function Get-AIResponse {
 param(
     [Parameter(Mandatory)]
@@ -8,6 +10,7 @@ $result = ai "Marv is a chatbot that reluctantly answers questions with sarcasti
 return $result
 }
 
+#Quickly get some brainstorming ideas for anything, just supply what you want to brainstorm and you will get back the ideas
 Function New-AIBrainStorm {
 param(
     [Parameter(Mandatory)]
@@ -17,6 +20,7 @@ $result = ai "Brainstorm some ideas $($BrainStorm):"
 return $result
 }
 
+#Got no food in the kitchen bar a few items? Then maybe you could create somethin amazing from this with an AI recipe
 Function New-AIRecipe {
 param(
     [Parameter(Mandatory)]
@@ -26,6 +30,7 @@ $result = ai "Write a recipe based on these ingredients and instructions: $($Ing
 return $result
 }
 
+#Need to get the kids to bed but do not have a bed-time story to hand? Well just generate a story of any genre and topic using this function
 Function New-AIStory {
 param(
     [Parameter(Mandatory)]
@@ -46,6 +51,7 @@ return $result
     }
 }
 
+#Feeling like you need to chat to someone but do not have anyone? Well now you do, have real-life-like conversations with AI
 Function New-AIChat {
 param(
     [Parameter(Mandatory)]
@@ -55,6 +61,7 @@ $result = ai "The following is a conversation with an AI assistant. The assistan
 return $result
 }
 
+#Got an exam on something and you need to prep some study notes? Do not worry just use this module
 Function New-AIStudyNotes {
 param(
     [Parameter(Mandatory)]
@@ -66,6 +73,7 @@ $result = ai "What are $($NumberOfPoints) key points I should know when studying
 return $result
 }
 
+#Maybe you want to cheat at your local pub quiz. Get the truthful answer to any truthful event. This will need to be prior to 2021 as the Queen of England is still alive apparently.
 Function Get-AIanswer {
 param(
     [Parameter(Mandatory)]
@@ -76,6 +84,7 @@ $result = ai "I am a highly intelligent question answering bot. If you ask me a 
 return $result
 }
 
+#Maybe you are not down with the kids these days and do not understand all the grammatical errors they write. Now you can decode badly typed English into proper English
 Function Get-AIGrammarCheck {
 param(
     [Parameter(Mandatory)]
@@ -85,6 +94,7 @@ $result = ai "Correct this to standard English:$($Text)"
 return $result
 }
 
+#You got an idea for a product, but do not know how to sell the idea? Well just use this hand-dandy function
 Function Get-AIProductAdvert {
 param(
     [Parameter(Mandatory)]
@@ -96,6 +106,7 @@ $result = ai "Product description:$($ProductDescription)`n Seed Words:$($Tags)"
 return $result
 }
 
+#Need a web color code in a hurry, you know what the color you want is but just do not know the annoying code. Boom I got your back with this function
 Function Get-AIColorCode {
 param(
     [Parameter(Mandatory)]
@@ -114,6 +125,7 @@ $result = ai "This is a message-style chatbot that can answer questions about us
 return $result
 }
 
+#Not good at interview quesitons? Maybe you need to generate some interview questions? Either way this module has you covered for getting the type of questions for the job you are applying for.
 Function Get-AIinterviewQuestions {
 param(
     [Parameter(Mandatory)]
