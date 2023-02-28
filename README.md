@@ -1,4 +1,5 @@
-# PowerShellAI: A User-Friendly Module for OpenAI's GPT-3 and DALL-E API
+# PowerShellAI
+## A User-Friendly Module for OpenAI's GPT-3 and DALL-E API
 
 `PowerShellAI` is a ***community-maintained*** PowerShell module designed to simplify the use of OpenAI's GPT-3 language model and DALL-E API. It empowers users to effortlessly build complex language-powered applications, regardless of their level of experience.
 
