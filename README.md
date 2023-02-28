@@ -1,3 +1,22 @@
+# PowerShellAI: A User-Friendly Module for OpenAI's GPT-3 and DALL-E API
+
+`PowerShellAI` is a ***community-maintained*** PowerShell module designed to simplify the use of OpenAI's GPT-3 language model and DALL-E API. It empowers users to effortlessly build complex language-powered applications, regardless of their level of experience.
+
+`PowerShellAI` is cross-platform and runs seamlessly on Windows, Linux, and MacOS.
+
+Getting started with `PowerShellAI` is easy. Simply install the module from the gallery using the following command: 
+
+`Install-Module -Name PowerShellAI`
+
+The repository includes a comprehensive list of functions that enable users to interact with GPT-3 and DALL-E, along with examples of how to use them at the command line or in scripts. 
+
+The video demos showcase the many possibilities of the module and how you can leverage its functions to best suit your needs.
+
+Whether you're a seasoned developer or just getting started with AI, `PowerShellAI` is a valuable tool that can help you unlock the full potential of OpenAI's GPT-3 and DALL-E.
+
+<br/>
+<br/>
+
 >![](./media/AIReplace.png)
 
 # Unleash the Power of Artificial Intelligence with PowerShell
